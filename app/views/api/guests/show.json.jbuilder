@@ -1,2 +1,5 @@
 json.partial! 'guest', guest: @guest
-json.array! @guest.gifts, :title, :description
+json.gifts @guest.gifts do |gift|
+  json.title gift.title
+  json.description gift.description
+end
